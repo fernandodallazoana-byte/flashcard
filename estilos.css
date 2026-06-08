@@ -1,4 +1,5 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
@@ -27,12 +28,12 @@ body {
 }
 
 main {
-    flex:1;
+    flex: 1;
 }
 
-.cabecalho-link{
+.cabecalho-link {
     color: #f70000;
-}   text-
+}
 
 h1 {
     color: #f70000;
@@ -42,10 +43,11 @@ h1 {
     position: relative;
     transition: transform 0.8s;
 }
+
 .cartao-frente, .cartao-verso {
     position: absolute;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgb(rgb(56, 50, 50), rgb(60, 61, 60), rgb(38, 38, 41));
+    box-shadow: 0 6px 12px rgb(56, 50, 50);
     backface-visibility: hidden;
 }
 
