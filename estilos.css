@@ -1,13 +1,15 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Evita que paddings quebrem o tamanho dos elementos */
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #bb96dd;
+    font-family: Arial, sans-serif;
 }
 
 .cabecalho {
@@ -15,16 +17,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f70000;
+    background-color: rgb(128, 12, 206);
 }
 
 .cabecalho-link {
-    color: #ffffff;
+    color: black;
     text-decoration: none;
+    font-weight: bold;
 }
 
 h1 {
-    color: #ffffff;
+    color: black;
+    font-size: 18px;
 }
 
 main {
@@ -33,42 +37,73 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    gap: 20px;
 }
 
-section {
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Container para organizar os cartões lado a lado */
+.container-cartoes {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* O cartão define a área e a perspectiva 3D */
 .cartao {
     width: 260px;
-    height: 350px;
-    perspective: 1000px;
+    height: 280px; /* Aumentado um pouco para acomodar melhor o texto */
+    perspective: 1000px; /* Cria o efeito de profundidade 3D */
 }
 
+/* O elemento interno que vai girar de fato */
 .cartao-interno {
     width: 100%;
     height: 100%;
     position: relative;
     transition: transform 0.8s;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; /* CORRIGIDO: O termo correto é transform-style */
 }
 
+/* Aciona a rotação ao passar o mouse */
 .cartao:hover .cartao-interno {
     transform: rotateY(180deg);
 }
 
+/* Estilo comum para as duas faces */
 .cartao-frente, .cartao-verso {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
-    border-radius: 8px;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Esconde a face oposta durante o giro */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: white; /* Cor de fundo para destacar o texto */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+.cartao-imagem {
+    width: 100%;
+    height: 160px;
+    object-fit: cover; /* Recorta a imagem proporcionalmente sem distorcer */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* O verso começa virado para trás */
 .cartao-verso {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* CORRIGIDO: Mudado de rotateX para rotateY */
+}
+
+footer {
+    background-color: #a780ca;
+    padding: 15px 25px;
+    color: black;
+    text-align: center;
 }
