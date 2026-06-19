@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(32, 4, 49);
+    background-color:#a780ca;
 }
 
 .cabecalho-link {
